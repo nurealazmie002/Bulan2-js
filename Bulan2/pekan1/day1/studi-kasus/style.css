@@ -1,0 +1,37 @@
+body {
+  font-family: 'Georgia', serif;
+  background-color:#F8F9FA;
+  color:white; 
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+header {
+  background: #0D6EFD; 
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  border: 2px solid #bc41d2;
+  margin-bottom: 50px; 
+  text-align: center;
+}
+button {
+  background: #817c79; 
+  color: #f5f5dc;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.4s;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+button:hover {
+  background: #7a5c3e; 
+}
