@@ -43,9 +43,9 @@ if (konfirmasi){
 
     
 
-//soal :Jika variabel user kosong → tampilkan console.error().
-/* 
-let user = ""
+// soal :Jika variabel user kosong → tampilkan console.error().
+
+/* let user = ""
 if (user === ""){
     console.error("user tidak boleh kosong")
 }else{
