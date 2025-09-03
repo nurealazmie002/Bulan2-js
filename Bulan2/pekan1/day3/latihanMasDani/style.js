@@ -162,7 +162,7 @@ switch(bulan){
 
 // Menentukan jenis kelamin (L/P).
 
-let jenisKelamin = "bencong"
+/* /let jenisKelamin = "bencong"
 switch(jenisKelamin){
     case "Laki-laki":
         console.log("Jenis kelamin anda adalah Laki-laki")
@@ -171,8 +171,8 @@ switch(jenisKelamin){
         console.log("Jenis kelamin anda adalah Perempuan")
         break
     default:
-        console.log("Jenis kelamin apa itu, Aquarium ?")
-}
+        console.log("Jenis kelamin apa itu, Aquarium ?") 
+}  */
 
 
 

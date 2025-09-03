@@ -9,5 +9,5 @@ if (nilai >=90){
 }else if(nilai >= 60){
     console.log("D")
 }else{
-    console.log("E")
+    console.log("E, belajar ndul.")
 }
