@@ -23,7 +23,7 @@ if (usia <=12){
 
 // Buat `switch` statement untuknampilkan nama hari dari angka(1–7)
 
-let hari = 1
+/* let hari = 8
 switch(hari){
 case 1 :
     console.log("senin")
@@ -47,5 +47,6 @@ case 7 :
     console.log("ahad")
     break
 default :
-    console.log("hari apaan lebih dari 7 ?")
+    console.log("hari apaan lebih dari 7, hah ?")
 }
+ */
