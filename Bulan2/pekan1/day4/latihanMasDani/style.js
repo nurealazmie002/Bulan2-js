@@ -83,6 +83,10 @@ while (password !== "rahasia"){
   */
 
 
+
+
+
+
 // Jalan terus sampai bensin habis.
 
 /* let bensin  
@@ -94,9 +98,57 @@ while (!bensin) {
         alert("Bensin habis");
     }
 } */
+
+
+
+
+
+
+
+
+
+    
 // Ulangi lempar dadu sampai dapat angka 6.
+
+/* let angka
+while (angka !== 6) {
+    angka = Math.floor(Math.random() * 6) + 1;
+    console.log("Lempar dadu: " + angka);
+}  */
+
 // Terus tambah uang tabungan sampai cukup untuk beli barang.
+
+/* let tabungan = 0;              
+const hargaBarang = 100000;    
+const nabungPerHari = 12000;   
+let hari = 0;                  
+
+while (tabungan < hargaBarang) {
+    hari++;
+    tabungan += nabungPerHari;
+    console.log("Hari ke-" + hari + ": Tabungan sekarang Rp" + tabungan);
+}
+
+console.log("Tabungan cukup! Barang bisa dibeli dalam " + hari + " hari."); */
+
+
+
+
+
+
+
+
 // Ulangi proses input sampai user mengetik "stop".
+
+/* let input = ""
+while (input !== "stop") {
+    input = prompt("Masukkan input: ");
+    if(input !== "stop"){
+        alert("Input anda salah, silahkan ulangi");
+    }else{
+        alert("Input anda benar");
+    }
+} */
 
 
 
