@@ -503,3 +503,61 @@ panggilUrutan();
 panggilUrutan(); 
 panggilUrutan(); 
 panggilUrutan();  */
+
+
+//**Soal 19:**
+/* function hitungGaransi(jenisService,hariService){
+    let tambahanHari = 0
+    if(jenisService === "ringan"){
+        tambahanHari = 7
+    }
+    if (jenisService === "sedang"){
+        tambahanHari = 14
+    }
+    if(jenisService === "berat"){
+        tambahanHari = 30
+    }
+    let hariBerakhir = hariService + tambahanHari
+    return hariBerakhir
+}
+console.log("service berat hari ke - 5, garansi habis hari ke " + hitungGaransi("berat",5))
+console.log("service ringan hari ke - 20, garansi habis hari ke " + hitungGaransi("ringan",20))
+console.log("service sedang hari ke - 12, garansi habis hari ke " + hitungGaransi("sedang",12)) */
+
+
+//**Soal 20:**
+/* let totalKomisi = 0
+function hitungKomisi(jenisService,harga){
+let komisi = 0
+if(jenisService === "ringan"){
+    komisi = harga * 0.1
+}if(jenisService ==="sedang"){
+    komisi = harga * 0.15
+}if (jenisService === "berat"){
+    komisi = harga * 0.2
+}
+totalKomisi += komisi
+return komisi
+}
+
+console.log("komisi service ringan: ",hitungKomisi("ringan",500000))
+console.log("komisi service sedang: ",hitungKomisi("sedang",1000000))
+console.log("komisi service berat: ",hitungKomisi("berat",2000000))
+console.log("komisi service berat: ",hitungKomisi("berat",2000000))
+
+console.log("Total semua komisi: ",totalKomisi) */
+
+
+
+
+//**Soal 21:**
+
+/* function hitungBiayaPerPertemuan(paket, harga, pertemuan) {
+    let biayaPerPertemuan = harga / pertemuan;
+    return "Paket " + paket + ": Rp" + biayaPerPertemuan + " per pertemuan";
+}
+
+console.log(hitungBiayaPerPertemuan("Basic",500000,4));
+console.log(hitungBiayaPerPertemuan("Standard",800000,8));
+console.log(hitungBiayaPerPertemuan("Premium",1200000,12));
+ */
