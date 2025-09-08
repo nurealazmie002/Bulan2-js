@@ -477,3 +477,29 @@ if (totalWaktu <= 8){
 }
 
 cekWaktu(motorMasuk) */
+
+//**soal 18: **
+/* let antrian = [];
+
+function tambahUrutan(nama){
+    antrian.push(nama);
+    console.log(nama + " nomor urut " + antrian.length);
+}
+
+function panggilUrutan(){
+    if(antrian.length === 0){
+        console.log("Antrian kosong");
+    } else {
+        let dipanggil = antrian.shift();
+        console.log("Memanggil motor milik " + dipanggil);
+    }
+}
+
+tambahUrutan("Andi");
+tambahUrutan("Budi");
+tambahUrutan("Citra");
+
+panggilUrutan(); 
+panggilUrutan(); 
+panggilUrutan(); 
+panggilUrutan();  */
