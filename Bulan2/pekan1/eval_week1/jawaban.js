@@ -227,6 +227,9 @@ beliKaos(10)
 beliKaos(18) */  
 
 
+
+
+
 //**Soal 10:**
 
 /* let jumlahPoin = 0
@@ -251,3 +254,226 @@ function cekLevel(){
 
 belanja(1)
 belanja(500)  */ 
+
+
+
+
+
+//**Soal 11:**
+
+/*let nilaiSiswa = [80, 90, 75, 88, 93, 75, 65, 78, 85, 95,50,35,67,52]
+function hitungRataRata(nilaiSiswa){
+let total = 0
+    for(let i = 0; i < nilaiSiswa.length; i++){
+        total += nilaiSiswa[i]
+    }
+    return total / nilaiSiswa.length
+}
+console.log(hitungRataRata(nilaiSiswa)) */
+
+
+
+
+
+//**Soal 12:**
+
+/* function tentukanGrade(nilai){
+    if(nilai >= 85 && nilai <= 100){
+        return"A"
+    }else if(nilai >= 70 && nilai <= 84){
+        return"B"
+    }else if(nilai >= 60 && nilai <=69){
+        return"C"
+    }else {
+        return"D"
+    }
+}
+
+for (let i = 0 ; i < nilaiSiswa.length ; i++){
+    let nilai = nilaiSiswa[i]
+    let grade = tentukanGrade(nilai)
+    console.log("Siswa " + [i+1] + " memiliki nilai sejumlah " + nilai + " berarti grade nya " + grade)
+} */
+
+
+
+
+
+//**Soal 13:**
+
+/* let siswa = [
+    { nama: "andi", nilai: 88 },
+    { nama: "budi", nilai: 73 },
+    { nama: "citra", nilai: 91 },
+    { nama: "dewi", nilai: 65 },
+    { nama: "eko", nilai: 78 },
+    { nama: "fajar", nilai: 84 },
+    { nama: "gita", nilai: 55 },
+    { nama: "hadi", nilai: 92 },
+    { nama: "intan", nilai: 69 },
+    { nama: "jokowi", nilai: 81 },
+    { nama: "kartika", nilai: 95 },
+    { nama: "lukman", nilai: 74 },
+    { nama: "maya", nilai: 60 },
+    { nama: "nina", nilai: 87 },
+    { nama: "oscar", nilai: 50 },
+    { nama: "putri", nilai: 82 },
+    { nama: "qori", nilai: 77 },
+    { nama: "raka", nilai: 93 },
+    { nama: "sinta", nilai: 68 },
+    { nama: "tono", nilai: 71 },
+    { nama: "umar", nilai: 85 },
+    { nama: "vina", nilai: 64 },
+    { nama: "wawan", nilai: 89 },
+    { nama: "xavier", nilai: 59 },
+    { nama: "yuli", nilai: 97 }
+];
+
+function cariSiswa(cariNama){
+    let ketemu = false
+
+    for (let i=0;i < siswa.length; i++){
+        if (siswa[i].nama === cariNama){
+            console.log("Nama : " + siswa[i].nama)
+            console.log("Nilai :" + siswa[i].nilai)
+            ketemu = true
+            break;
+        }
+    }
+
+
+    if(!ketemu){
+        console.log( cariNama + " tidak ditemukan")
+    }
+}
+
+cariSiswa("sinta") */
+
+
+
+
+
+//**Soal 14:**
+
+/* let nilaiSiswa = [80,90,75,88,93,87,65,78,85,95,76,73,78,68,90,85,57,68,88,98]
+
+function hitungRataRataKleas(nilaiSiswa){
+let total = 0
+    for(let i = 0; i < nilaiSiswa.length; i++){
+        total += nilaiSiswa[i]
+    }
+    return total / nilaiSiswa.length
+}
+let rataRata = hitungRataRataKleas(nilaiSiswa)
+console.log("Nilai rata-rata kelas kita adlah " + rataRata)
+
+if (rataRata >= 80){
+    console.log( "Hore...kita dapat reward!!!")
+}else{
+    console.log("Hadeeeeh Nice Try Diddy, dah dibilangin belajar.")
+} */
+
+
+
+
+
+//**Soal 15:**
+
+/* let siswa = [
+    { nama: "andi", nilai: 88 },
+    { nama: "budi", nilai: 73 },
+    { nama: "citra", nilai: 91 },
+    { nama: "dewi", nilai: 65 },
+    { nama: "eko", nilai: 78 },
+    { nama: "fajar", nilai: 84 },
+    { nama: "gita", nilai: 55 },
+    { nama: "hadi", nilai: 92 },
+    { nama: "intan", nilai: 69 },
+    { nama: "jokowi", nilai: 81 },
+    { nama: "kartika", nilai: 95 },
+    { nama: "lukman", nilai: 74 },
+    { nama: "maya", nilai: 60 },
+    { nama: "nina", nilai: 87 },
+    { nama: "oscar", nilai: 50 },
+    { nama: "putri", nilai: 82 },
+    { nama: "qori", nilai: 77 },
+    { nama: "raka", nilai: 93 },
+    { nama: "sinta", nilai: 68 },
+    { nama: "tono", nilai: 71 },
+    { nama: "umar", nilai: 85 },
+    { nama: "vina", nilai: 64 },
+    { nama: "wawan", nilai: 89 },
+    { nama: "xavier", nilai: 59 },
+    { nama: "yuli", nilai: 97 }
+];
+
+function ranking(siswa){
+    siswa.sort((a,b) => b.nilai - a.nilai)
+
+    console.log("Rangking kelas :")
+    for (let i = 0 ; i < siswa.length; i++){
+    console.log((i+1) + ". " + siswa[i].nama + " - " + siswa[i].nilai)
+    }
+}
+ranking(siswa) */
+
+
+
+
+
+
+//**soal 16:**
+
+/* let reparasiMotor = [
+    { jenis: "ringan", harga: 500000, waktu: 2 },
+    { jenis: "sedang", harga: 1000000, waktu: 4 },
+    { jenis: "berat", harga: 2000000, waktu: 8 }
+]
+function totalPendapatan(reparasiMotor){
+    let totalPendapatan = 0
+    for (let i = 0; i < reparasiMotor.length; i++){
+        totalPendapatan += reparasiMotor[i].harga
+    }
+    return totalPendapatan
+}
+function totalWaktu(reparasiMotor){
+    let totalWaktu = 0
+    for (let i = 0; i < reparasiMotor.length; i++){
+        totalWaktu += reparasiMotor[i].waktu
+    }
+    return totalWaktu
+}
+console.log(totalPendapatan(reparasiMotor)  + " & " + totalWaktu(reparasiMotor) + " jam") */
+
+
+
+
+
+//**Soal 17:**
+
+/* let layanan = {
+    ringan: 2,
+    sedang: 4,
+    berat: 8
+}
+
+let motorMasuk = ["ringan","sedang","berat","sedang","ringan","sedang","berat","ringan","sedang","ringan"]
+
+function cekWaktu(daftarMotor){
+    let totalWaktu = 0
+
+    for (let i=0 ; i < daftarMotor.length ; i++){
+        let jenis = daftarMotor[i]
+        totalWaktu += layanan[jenis]
+    }
+    console.log("Total motor masuk : " + motorMasuk.length)
+    console.log("Total waktu yang dibutuhkan : "  + totalWaktu + " jam")
+
+if (totalWaktu <= 8){
+        console.log(" Semua motor bisa selesai hari ini.");
+    } else {
+        console.log("Tidak cukup waktu, sebagian harus lanjut besok.");
+    }
+}
+
+cekWaktu(motorMasuk) */
