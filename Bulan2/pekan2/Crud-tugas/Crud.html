@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body {
+    height: 100vh;              
+    margin: 0;
+    display: flex;              
+    justify-content: center;    
+    align-items: center;        
+    background: #f0f2f5;        
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+div{
+    width: 200px;
+    margin: auto;
+    margin-top: 100px;
+    border: 1px solid black;
+    padding: 25px;
+    display: inline-block;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    border-radius: 20px;
+}
+div h1 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+div button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    background: #4CAF50;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+ 
+}
+
+div button:hover {
+    background: #45a049;
+}
+
+div button:active {
+    transform: scale(0.95);
+}
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Crud User Management</h1>
+        <button onclick = "register()">Register</button>
+        <button onclick = "login()">Login</button>
+        <button onclick = "showUsers()">Tampilkan User</button>
+        <button onclick = "updateUser()">Update User</button>
+        <button onclick = "deleteUser()">Hapus User</button>
+    </div>
+
+    <script>
+        
+    let usernames = []
+    let passwords = []
+        
+    function register(){
+        let uname = prompt("Masukkan Username Anda ") 
+        let pword = prompt("Buat Password Anda ")
+
+        if(!uname || !pword){
+            alert("Username dan password harus di input")
+            return
+        }
+
+        if(usernames.includes(uname)){
+            alert("username telah terdaftar, buat yang lain!")
+            return
+        }
+        usernames.push(uname)
+        passwords.push(pword)
+        alert("Proses registrasi berhasil!")
+    }
+    
+
+    function showUsers(){
+        if(usernames.length === 0){
+        alert("Belum ada user terdaftar")
+        return
+    }
+
+    let daftar = "Daftar User : \n\n"
+    for (let i = 0; i < usernames.length; i++){
+        daftar += `${i+1}. Username: ${usernames[i]}, Password: ${passwords[i]}\n`
+    }
+    alert(daftar)
+    
+}
+
+function updateUser(){
+
+    let uname = prompt("Masukkan username yang mau diupdate:")
+      let index = usernames.indexOf(uname)
+
+      if (index === -1) {
+        alert("Username tidak ditemukan!")
+        return
+      }
+
+      let newPass = prompt("Masukkan password baru:")
+      passwords[index] = newPass
+      alert("Password berhasil diupdate untuk user " + uname)
+}
+
+function deleteUser() {
+      let uname = prompt("Masukkan username yang mau dihapus:")
+      let index = usernames.indexOf(uname)
+
+      if (index === -1) {
+        alert("Username tidak ditemukan!")
+        return
+      }
+
+      usernames.splice(index, 1)
+      passwords.splice(index, 1)
+      alert("User berhasil dihapus!")
+}
+
+function login(){
+    let uname = prompt("Masukkan username yang terdaftar")
+    let pword = prompt("Masukkan password yang benar")
+
+    let index = usernames.indexOf(uname)
+
+    if(index === -1){
+        alert("Username salah")
+        return
+    }
+
+    if(passwords[index] === pword){
+        alert("Login berhasil! Selamat datang " + uname)
+        } else{
+            alert("password salah")
+    }
+}
+    </script>
+</body>
+</html>
