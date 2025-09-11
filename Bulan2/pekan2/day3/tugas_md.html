@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let menu = [
+            {nama : "ayam goreng", kategori : "makanan", harga : 25000},
+            {nama : "bebek goreng", kategori : "makanan", harga : 35000},
+            {nama : "ikan goreng", kategori : "makanan", harga : 20000},
+            {nama : "ayam geprek", kategori : "makanan", harga : 25000},
+            {nama : "tenderloin steak", kategori : "makanan", harga : 100000},
+            {nama : "lalapan", kategori : "makanan", harga : 1000},
+            {nama : "pindang baung", kategori : "makanan", harga : 50000},
+            {nama : "tahu tempe goreng", kategori : "makanan", harga : 5000},
+            {nama : "es teh", kategori: "minuman", harga: 5000},
+            {nama : "es jeruk", kategori: "minuman", harga: 7000},
+            {nama : "kopi hitam", kategori: "minuman", harga: 8000},
+            {nama : "cappuccino", kategori: "minuman", harga: 12000},
+            {nama : "air putih", kategori: "minuman", harga: 500},
+            {nama : "jus alpukat", kategori: "minuman", harga: 15000}
+        ]
+
+        menu.forEach(n => console.log(n))
+
+console.log("")
+        
+        let filter = menu.filter(n => n.harga < 30000 )
+        filter.forEach(n => {console.log(`${n.nama} (${n.kategori}) - Rp${n.harga}`)})
+
+console.log("")
+
+        let tampilMenu = menu.map(n => console.log(n.nama))
+
+console.log("")
+
+        let totalMenu = menu.reduce((total,n) => total + n.harga, 0)
+        console.log ("Total harga semua nya adalah : Rp." + totalMenu)
+
+console.log("")
+
+        let cariMenu = menu.find(n => n.nama === "es jeruk")
+        if (cariMenu) {
+        console.log(`Ketemu: ${cariMenu.nama} (${cariMenu.kategori})  Rp${cariMenu.harga}`);
+        } else {
+        console.log("Menu tidak ditemukan");
+        }
+
+console.log("")
+
+        let [makanan1,makanan2] = menu
+        console.log(makanan1)
+        console.log(makanan2)
+
+console.log("")
+
+        let{nama,harga} = menu[4]
+        console.log(nama)
+        console.log(harga)
+    </script>
+</body>
+</html>
