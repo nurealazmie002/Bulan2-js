@@ -28,10 +28,19 @@ export function hitungTotal(belanjaan) {
   return totalHarga
 }
 
-// 4. Update stok barang
+// UPDATE STOK BARANG
 export function updateStok(id, jumlahBeli) {
-  // TODO: cari barang berdasarkan id
-  // Destructuring stok
-  // stok = stok - jumlahBeli
-  // return barang yg sudah diupdate
+
+  let item = barang.find(i => i.id === id)
+
+  if(item){
+    let {stok} = item
+    stok = stok - jumlahBeli
+
+    item.stok = stok
+
+    return item
+  }
+
+  return null
 }
