@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //DESTRUCTURING ARRAY
+
+/* let angka = [10,20,30]
+let [x,y,z] = angka
+
+console.log(x)
+console.log(y)
+console.log(z) */
+
+
+/* let buah = ["apel","jeruk","mangga"]
+let [buah1,buah2,buah3] = buah
+
+console.log(buah1)
+console.log(buah2) */
+
+
+/* let nomor = [5,6,7,8]
+let [first,...rest] = nomor
+
+console.log(first)
+console.log(rest) */
+
+
+/* let nilai = [100,200]
+let [satu,dua] = nilai
+
+console.log(satu)
+console.log(dua) */
+
+
+/* let booleann = [true,false,true]
+let [t1,t2,t3] = booleann
+
+console.log(t1)
+console.log(t2)
+console.log(t3) */
+
+
+
+
+//DESTRUCTURING OBJECT
+
+
+/* let warga = {nama : "budi", umur : 17}
+let {nama,umur} = warga
+
+console.log(nama)
+console.log(umur) */
+
+
+/* let koleksi = {judul : "The story of Sherlock Holmes", pengarang : "Sir Arthur Conan Doyle" }
+let {judul,pengarang} = koleksi
+
+console.log(judul)
+console.log(pengarang) */
+
+
+/* let motor = {merk : "honda", warna : "merah"}
+let {merk,warna} = motor
+
+console.log(merk) */
+
+
+/* let user = {username : "danz", password : "123"}
+let {username,password} = user
+
+console.log(username)
+console.log(password) */
+
+
+/* let murid = {nama : "Siti",kelas : "XI"}
+let {nama,kelas} = murid
+
+console.log(nama)
+console.log(kelas) */
+
+
+
+
+//SPREAD OPERATOR
+
+
+/* let angka1 = [1,2]
+let angka2 = [3,4]
+let fusion = [...angka1,...angka2]
+
+console.log(fusion) */
+
+
+/* let nilai = [1,2,3]
+let nilaiBaru = [10,20,30]
+let copy = [...nilai,...nilaiBaru]
+
+console.log(copy) */
+
+
+/* let nomorLama = {a : 1}
+let nomorBaru = {a : 2}
+let gabung = { lama : nomorLama.a, baru : nomorBaru.a}
+
+console.log(gabung) */
+
+
+/* let nomor = [5,6,7]
+console.log(...nomor) */
+
+
+/* let data1 = ["a","b"]
+let data2 = ["c","d"]
+let copy = [...data1,...data2]
+
+console.log(copy) */
+
+
+
+
+//REST OPERATOR
+
+
+/* function penjumlahan(...angka){
+    return angka.reduce((total,n) => total + n, 0)
+}
+console.log(penjumlahan(5,12,18,32,8,15)) */
+
+
+/* function print(...objek){
+    return objek.reduce((acc,curr)=> acc + "\n" + curr)
+}
+let hasil = print("Hallo","Selamat Pagi","Semangat Belajar ya...")
+console.log(hasil) */
+
+
+/* function perkalian(...angka){
+    return angka.reduce((total,n) => total *n)
+}
+console.log(perkalian(5,10,12,4)) */
+
+
+/* function fusion(...kata){
+    return kata.reduce((total,n)=> total + n)
+}
+console.log(fusion("semangat"," ya"," kamu...")) */
+
+
+/* let angka = [1,2,3,4,5]
+let [awal,...sisa] = angka
+
+console.log(awal)
+console.log(sisa) */
+
+
+
+
+//LATIHAN MANDIRI
+
+
+/* let angka = [1,2,3,4]
+let [a,b,c,d] = angka
+
+console.log(a)
+console.log(b)
+console.log(c)
+console.log(d) */
+
+
+
+/* let mobil = {merek : "Ford",tahun : 2020}
+let {merek,tahun} = mobil
+
+console.log(merek)
+console.log(tahun) */
+
+
+
+/* let nilaiLama = [84,79]
+let nilaiBaru = [97,86]
+let update = [...nilaiLama,...nilaiBaru]
+
+console.log(update) */
+
+
+
+/* function pertambahan(...angka){
+    return angka.reduce((total,n) => total + n )
+}
+
+console.log(pertambahan(1,2,3,4,5)) */
+
+
+
+
+
+//STUDI KASUS
+
+/* let siswa = { nama: "Dewi", umur: 16, kelas: "XI" };
+let { nama, kelas } = siswa;
+let siswaLengkap = { ...siswa, hobi: "Membaca" };
+function hitungTotal(...nilai) {
+  return nilai.reduce((total, n) => total + n, 0);
+}
+let totalNilai = hitungTotal(80, 90, 85, 95);
+console.log("Nama:", nama);
+console.log("Kelas:", kelas);
+console.log("Data Lengkap:", siswaLengkap);
+console.log("Total Nilai:", totalNilai); */
+    </script>
+</body>
+</html>
