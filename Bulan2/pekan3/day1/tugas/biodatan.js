@@ -1,4 +1,4 @@
-{
+export const biodata ={
     "nama": "Naufal Hibatullah Nuril Azmi",
     "umur": 20,
     "hobi": "Kulineran",

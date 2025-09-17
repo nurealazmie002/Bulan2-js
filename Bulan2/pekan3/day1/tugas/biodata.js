@@ -1,2 +1,2 @@
-const biodata = require('./biodata.json')
+import {biodata} from "./biodatan.js"
 console.log(biodata)
