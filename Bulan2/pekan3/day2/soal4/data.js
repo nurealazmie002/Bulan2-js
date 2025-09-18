@@ -1,0 +1,1 @@
+export const angka = [7, 12, 25, 30, 41];
