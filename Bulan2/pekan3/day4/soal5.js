@@ -1,7 +1,7 @@
 function progress (step){
     return new Promise((resolve) => {
         setTimeout(() => {
-            resolve(step)
+            resolve(`Progress ${step}`)
         }, 1000)
     })
 }
