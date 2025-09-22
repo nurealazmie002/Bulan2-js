@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="text">Paragraf 1</p>
+    <p class="text">Paragraf 2</p>
+    <p class="text">Paragraf 3</p>
+    <p class="text">Paragraf 4</p>
+
+    <script>
+        const paragraf = document.querySelectorAll(".text")
+
+        paragraf.forEach((b,i) => {
+            b.style.color = "blue"
+        })
+    </script>
+</body>
+</html>
