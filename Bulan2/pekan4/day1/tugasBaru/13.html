@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id = "myForm">
+        <label for="">Nama : <input type="text" id = "nama"></label>
+        <button type="submit">kirim biodata...</button>
+
+        <script>
+            const form = document.getElementById("myForm")
+            const name = document.getElementById("nama")
+
+            form.addEventListener("submit", function(e){
+                e.preventDefault()
+                console.log(name.value)
+            })
+        </script>
+    </form>
+</body>
+</html>

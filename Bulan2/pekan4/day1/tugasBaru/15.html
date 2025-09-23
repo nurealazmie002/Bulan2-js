@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id = "btn">klik tombol...</button>
+    <script>
+        
+        const ubah = document.getElementById("btn")
+
+        function ubahWarna(){
+            ubah.style.backgroundColor = "red"
+        }
+
+        function tampilTeks(){
+            console.log("Tombol di klik")
+        }
+
+        ubah.addEventListener("click", ubahWarna)
+        ubah.addEventListener("click", tampilTeks,{once: true})
+    </script>
+</body>
+</html>

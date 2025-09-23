@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id ="btn">klik ubah...</button>
+    <p id = "msg"></p>
+
+    <script>
+        btn.onclick = function(){
+            msg.innerText = "Handler pertama"
+        }
+
+        btn.onclick = function(){
+            msg.innerText = "Handler kedua"
+        }
+        
+        //penjelasan nya ialah yang jalan hanya onclick yang terakhir karena ditimpa.
+    </script>
+</body>
+</html>
