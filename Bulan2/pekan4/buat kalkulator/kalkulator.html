@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Pastel</title>
+    <style>
+        /* CSS untuk Kalkulator */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #f5e6ff, #d8b4fe);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+        }
+
+        .calculator {
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            width: 340px;
+        }
+
+        .display {
+            background-color: #f3e8ff;
+            border-radius: 15px;
+            color: #333;
+            font-size: 2.8em;
+            font-weight: 400;
+            height: 80px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .btn {
+            background-color: #f7f1ff;
+            border: none;
+            border-radius: 15px;
+            color: #5a5a5a;
+            cursor: pointer;
+            font-size: 1.5em;
+            padding: 20px;
+            transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+            user-select: none;
+        }
+
+        .btn:hover {
+            background-color: #e9d8ff;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .operator {
+            background-color: #e6cfff;
+            color: #5c3b8e;
+        }
+
+        .operator:hover {
+            background-color: #d8b4fe;
+        }
+
+        .clear {
+            background-color: #ffcdd2;
+            color: #c62828;
+        }
+
+        .clear:hover {
+            background-color: #ef9a9a;
+        }
+        
+        .equal {
+            background-color: #c8e6c9;
+            color: #2e7d32;
+            grid-column: span 2;
+        }
+
+        .equal:hover {
+            background-color: #a5d6a7;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button class="btn clear" onclick="clearDisplay()">AC</button>
+            <button class="btn" onclick="deleteLast()">DEL</button>
+            <button class="btn operator" onclick="appendOperator('%')">%</button>
+            <button class="btn operator" onclick="appendOperator('/')">÷</button>
+            <button class="btn" onclick="appendNumber('7')">7</button>
+            <button class="btn" onclick="appendNumber('8')">8</button>
+            <button class="btn" onclick="appendNumber('9')">9</button>
+            <button class="btn operator" onclick="appendOperator('*')">×</button>
+            <button class="btn" onclick="appendNumber('4')">4</button>
+            <button class="btn" onclick="appendNumber('5')">5</button>
+            <button class="btn" onclick="appendNumber('6')">6</button>
+            <button class="btn operator" onclick="appendOperator('-')">−</button>
+            <button class="btn" onclick="appendNumber('1')">1</button>
+            <button class="btn" onclick="appendNumber('2')">2</button>
+            <button class="btn" onclick="appendNumber('3')">3</button>
+            <button class="btn operator" onclick="appendOperator('+')">+</button>
+            <button class="btn" onclick="appendNumber('0')">0</button>
+            <button class="btn" onclick="appendNumber('.')">.</button>
+            <button class="btn equal" onclick="calculate()">=</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript untuk Fungsionalitas Kalkulator
+        const display = document.getElementById('display');
+        let currentInput = '0';
+        let operator = null;
+        let firstOperand = null;
+        let shouldResetDisplay = false;
+
+        function updateDisplay() {
+            display.innerText = currentInput;
+        }
+
+        function clearDisplay() {
+            currentInput = '0';
+            operator = null;
+            firstOperand = null;
+            shouldResetDisplay = false;
+            updateDisplay();
+        }
+
+        function deleteLast() {
+            if (currentInput.length > 1) {
+                currentInput = currentInput.slice(0, -1);
+            } else {
+                currentInput = '0';
+            }
+            updateDisplay();
+        }
+
+        function appendNumber(number) {
+            if (currentInput === '0' || shouldResetDisplay) {
+                currentInput = number;
+                shouldResetDisplay = false;
+            } else {
+                currentInput += number;
+            }
+            updateDisplay();
+        }
+
+        function appendOperator(op) {
+            if (operator !== null && !shouldResetDisplay) {
+                calculate();
+            }
+            firstOperand = parseFloat(currentInput);
+            operator = op;
+            shouldResetDisplay = true;
+        }
+
+        function calculate() {
+            if (operator === null || shouldResetDisplay) return;
+            const secondOperand = parseFloat(currentInput);
+            let result = 0;
+
+            switch (operator) {
+                case '+':
+                    result = firstOperand + secondOperand;
+                    break;
+                case '-':
+                    result = firstOperand - secondOperand;
+                    break;
+                case '*':
+                    result = firstOperand * secondOperand;
+                    break;
+                case '/':
+                    if (secondOperand === 0) {
+                        currentInput = "Error";
+                        updateDisplay();
+                        return;
+                    }
+                    result = firstOperand / secondOperand;
+                    break;
+                case '%':
+                    result = firstOperand % secondOperand;
+                    break;
+            }
+            currentInput = result.toString();
+            operator = null;
+            firstOperand = result;
+            shouldResetDisplay = true;
+            updateDisplay();
+        }
+    </script>
+
+</body>
+</html>
