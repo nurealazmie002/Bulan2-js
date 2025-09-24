@@ -224,14 +224,18 @@
 </form>
 <br>
 24
-<form>
+<form id = "form24">
     <input type="text" id="us24" name="login" placeholder="masukkan username">
     <input type="password" id="pw24" name="password" placeholder="masukkan password">
-    <button type="submit" onclick="login()">login</button>
+    <button type="submit">login</button>
     
     <script>
-    function login(){
-        const u = document.getElementById("us24").value
+  
+
+        const form =document.getElementById("form24")
+        form.addEventListener("submit", function(e){
+            e.preventDefault()
+            const u = document.getElementById("us24").value
         const p = document.getElementById("pw24").value
 
         if(!u || !p){
@@ -243,7 +247,8 @@
         }else{
             alert("Username atau password salah")
         }
-    }
+        })
+        
 </script>
 </form>
 <br>
