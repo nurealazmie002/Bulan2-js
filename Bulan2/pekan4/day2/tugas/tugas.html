@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+6  
+<form>
+    <input type="text" name="nama" required>
+    <button type="submit">ketik...</button>
+</form>
+<br>    
+7
+<form>
+    <input type="number" name="umur" min ="18" max="60">
+    <button type="submit">pilih...</button>
+</form>
+<br>    
+8
+<form>
+     <input type="password" name="password" minlength="8" required>
+    <button type="submit">ketik...</button>
+</form>
+<br>   
+9
+<form>
+    <input type="email" name="email" required>
+    <button type="submit">kirim...</button>
+</form>
+<br>   
+10
+<form>
+    <input type="text" name="contact" pattern="[0-9]{10,12}" placeholder="min.10 max.12" required>
+    <button type="submit">masukkan contact...</button>
+</form>
+<br>
+11
+<form>
+    <input type="text" name ="username" pattern="[a-z]+" placeholder="isi hanya huruf kecil" required>
+    <button type="submit">kirim...</button>
+</form>
+<br>
+12
+<form>
+    <input type="text" name="code post" pattern="[0-9]{5}" placeholder="isi kode pos,5 digit" required>
+    <button type="submit">isi...</button>
+</form>
+<br>
+13
+<form>
+    <input type="date" name="lahir" max="2019-12-31" placeholder="masukkan tanggal lahir" required>
+    <button type="submit">kirim CV...</button>
+</form>
+<br>
+14
+<form>
+    <input type="url" name="link" placeholder="masukkan link" required>
+    <button type="submit">kirim link...</button>
+</form>
+<br>
+15
+<form>
+    <input type="text" name="genap" pattern=".*[02468]$" placeholder="masukkan angka genap" required>
+    <button type="submit">isi...</button>
+</form>
+<br>
+16
+<form>
+    <input type="text" id="s16" name="nama" placeholder="masukkan nama">
+    <button type="submit" onclick="cekUser()">kirim...</button>
+    <script>
+        function cekUser(){
+            const name = document.getElementById("s16").value
+            if (name === "") {
+                alert("Nama wajib diisi")
+            }else{
+                alert("Selamat datang "+name)
+            }
+        }
+    </script>
+</form>
+<br>
+17
+<form>
+    <input type="text" id="s17" name="umur" placeholder="masukkan umur">
+    <button type="submit" onclick="cekUmur()">kirim...</button>
+
+    <script>
+        function cekUmur(){
+            const umur = document.getElementById("s17").value
+            if (umur === "") {
+                alert("Umur wajib diisi,bang")
+            }else if(umur < 18){
+                alert("aiiii kecik lagi ni... pigi balik lah!!!")
+            }else{
+                alert("uisssh dah besak ni... selamat datang")
+            }
+        }
+    </script>
+</form>
+<br>
+18
+<form>
+    <input type="password" id="s18" name="password" placeholder="masukkan password">
+    <button type="submit" onclick="cekPass()">kirim...</button>
+
+    <script>
+        function cekPass(){
+            const pass = document.getElementById("s18").value
+            if (pass === "") {
+                alert("Password wajib diisi,bang")
+            }else if(pass.length < 8){
+                alert("Password minimal 8 karakter")
+            }else{
+                alert("login berhasil")
+            }
+        }
+    </script>
+</form>
+<br>
+19
+<form>
+    <input type="email" id="s19" name="email" placeholder="masukkan email">
+    <button type="submit" onclick="cekEmail()">kirim...</button>
+
+    <script>
+        function cekEmail(){
+            const email = document.getElementById("s19").value
+            const regex = /^[\w.-]+@[\w.-]+\.\w{2,}$/
+
+            if (email === "") {
+                alert("Email wajib diisi,bang")
+            }else if(regex.test(email)){
+                alert("Email valid "+ email)
+            }else{
+                alert("Email invalid")
+            }
+        }
+    </script>
+</form>
+<br>
+20
+<form>
+    <input type="text" id="s20" name="contact" placeholder="masukkan contact">
+    <button type="submit" onclick="cekContact()">kirim...</button>
+
+    <script>
+        function cekContact(){
+            const contact = document.getElementById("s20").value
+            
+            if (contact === ""){
+                alert("Contact wajib diisi, bang")
+            }else if(isNaN(contact)){
+                alert("Contact harus angka")
+            }else{
+                alert("Contact valid "+ contact)
+            }
+        }
+    </script>
+</form>
+<br>
+21
+<form>
+    <input type="text" id="pw" name ="password" placeholder="masukkan password"> 
+    <input type="text" id="cpw" name="confirm" placeholder="konfirmasi password"> 
+    <button type="submit" onclick="confirmPass()">kirim...</button>
+
+    <script>
+        function confirmPass(){
+            const pw = document.getElementById("pw").value
+            const cpw = document.getElementById("cpw").value
+
+            if (pw === "" || cpw === "") {
+                alert("Password wajib diisi,bang")
+            }else if(pw !== cpw){
+                alert("Password tidak sama")
+            }else{
+                alert("Password valid")
+            }
+        }
+    </script>
+</form>
+<br>
+22
+<form>
+    <input type="date" id="s22" name="tanggal">
+    <button type="submit" onclick="cekDate()">kirim...</button>
+
+    <script>
+        function cekDate(){
+            const value = document.getElementById("s22").value
+            
+            if (!value){
+                alert ("Tanggal wajib diisi")
+            }else if (new Date(value) > new Date()){
+                alert("Tanggal tidak boleh lebih  dari tanggal ini")
+            }else{
+                alert("Tanggal valid ")
+            }
+        }
+    </script>
+</form>
+<br>
+23
+<form>
+    <input type=" text" id="s23" name="username" placeholder="masukkan username">
+    <button type="submit" onclick="valUser()">isi</button>
+
+    <script>
+        function valUser(){
+            const user = document.getElementById("s23").value
+            const regex = /^[a-zA-Z0-9]{5,}$/
+            if(!user === ""){
+                alert("Username wajib diisi")
+            }else if(regex.test(user)){
+                alert("Username valid")
+            }else{
+                alert("Username salah")
+            }
+        }
+    </script>
+</form>
+<br>
+24
+<form>
+    <input type="text" id="us24" name="login" placeholder="masukkan username">
+    <input type="password" id="pw24" name="password" placeholder="masukkan password">
+    <button type="submit" onclick="login()">login</button>
+    
+    <script>
+    function login(){
+        const u = document.getElementById("us24").value
+        const p = document.getElementById("pw24").value
+
+        if(!u || !p){
+            alert("Isi semua form")
+        }
+
+        if (u === "nurealazmie" && p === "12345"){
+            alert("Login berhasil")
+        }else{
+            alert("Username atau password salah")
+        }
+    }
+</script>
+</form>
+<br>
+25
+<form onsubmit="return cekSetuju()">
+    <label>
+        <input type="checkbox" id="setuju"> Saya setuju dengan syarat & ketentuan
+    </label>
+    <br>
+    <button type="submit">Kirim</button>
+</form>
+
+<script>
+    function cekSetuju(){
+        const checkbox = document.getElementById("setuju")
+        
+        if (!checkbox.checked){
+            alert("wajib setuju dulu sebelum melanjutkan!")
+            return false
+        }else{
+            alert("Terima kasih sudah menyanggupi")
+            return true
+        }
+    }
+</script>
+
+
+
+</body>
+</html>
