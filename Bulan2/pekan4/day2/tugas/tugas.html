@@ -274,6 +274,108 @@
         }
     }
 </script>
+<br>
+26
+
+<input type="number" id="angka" placeholder="Masukkan angka">
+<button onclick="cekAngka()">Cek</button>
+
+<script>
+function cekAngka(){
+    const value = document.getElementById("angka").value
+    if (value % 2 !== 0){
+        alert("Angka harus genap!")
+    } else {
+        alert("Valid")
+    }
+}
+</script>
+<br>
+27
+
+<textarea id="komentar" placeholder="Tulis komentar..."></textarea>
+<button onclick="cekKomentar()">Kirim</button>
+
+<script>
+function cekKomentar(){
+    const value = document.getElementById("komentar").value
+    if (value.length > 200){
+        alert("Komentar tidak boleh lebih dari 200 karakter!")
+    } else {
+        alert("Valid")
+    }
+}
+</script>
+<br>
+28
+
+<select id="opsi">
+    <option value="">--Pilih--</option>
+    <option value="A">Pilihan A</option>
+    <option value="B">Pilihan B</option>
+</select>
+<button onclick="cekOpsi()">Pilih</button>
+
+<script>
+function cekOpsi(){
+    const select = document.getElementById("opsi")
+    if (select.value === ""){
+        alert("Harus pilih salah satu!")
+    } else {
+        alert("Valid")
+    }
+}
+</script>
+<br>
+29
+
+<input type="file" id="file">
+<button onclick="cekFile()">Upload</button>
+
+<script>
+function cekFile(){
+    const file = document.getElementById("file").value.toLowerCase()
+    if (!(file.endsWith(".jpg") || file.endsWith(".png"))){
+        alert("File harus .jpg atau .png")
+    } else {
+        alert("Valid")
+    }
+}
+</script>
+<br>
+30
+
+<form onsubmit="return daftar()">
+    <input type="text" id="nama" placeholder="Nama"><br>
+    <input type="email" id="email" placeholder="Email"><br>
+    <input type="password" id="password" placeholder="Password"><br>
+    <button type="submit">Daftar</button>
+</form>
+
+<script>
+function daftar(){
+    const nama = document.getElementById("nama").value.trim()
+    const email = document.getElementById("email").value.trim()
+    const password = document.getElementById("password").value.trim()
+
+    if (nama === ""){
+        alert("Nama wajib diisi")
+        return false
+    }
+    if (email === "" || !email.includes("@")){
+        alert("Email tidak valid")
+        return false
+    }
+    if (password.length < 6){
+        alert("Password minimal 6 karakter")
+        return false
+    }
+
+    alert("Sukses")
+    return true
+}
+</script>
+
 
 
 
