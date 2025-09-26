@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+6
+<form onsubmit="simpanUser(event)">
+    <input type="text" id="username" placeholder="masukkan username" required>
+    <button type="submit">kirim user</button>   
+</form>
+    <script>
+    function simpanUser(e){
+        e.preventDefault()
+        const user = document.getElementById("username").value
+        localStorage.setItem("username", user)
+        alert("Username berhasil disimpan")
+    }
+    </script>
+<br>
+7
+<button onclick="tampilUser()">tampil</button>
+
+<script>
+    function tampilUser(){
+        const username = localStorage.getItem("username")
+        alert("Username: " + username)
+    }
+</script>
+<br>
+<br>
+8 & 9
+
+<form onsubmit="login(event)">
+    <input type="text" id = "inUser" placeholder="masukkan username">
+    <input type=" password" id = "inPass" placeholder="masukkan password">
+    <button type="submit">simpan akun</button>
+    <button onclick="logout()">logout</button>
+</form>
+
+
+    <script>
+        function login(e){
+            e.preventDefault()
+            const username = document.getElementById("inUser").value
+            const password = document.getElementById("inPass").value
+
+            localStorage.setItem("username", username)
+            localStorage.setItem("password", password)
+            alert("Login berhasil")
+        }
+
+        function logout(){
+            localStorage.removeItem("username")
+            localStorage.removeItem("password")
+            alert("Logout berhasil")
+        }
+    </script>
+<br>
+<br>
+10
+<button onclick="tambah()">klik</button>
+<p>jumlah : <span id = "jumlah"></span></p>
+
+
+<script>
+    let counter = parseInt(localStorage.getItem("counter")) || 0
+    document.getElementById("jumlah").innerText = counter
+
+    function tambah(){
+        counter++
+        localStorage.setItem("counter", counter)
+        document.getElementById("jumlah").innerText = counter
+    }
+</script>
+<br>
+11 & 12
+
+<button id = "dark">Dark</button>
+<button id = "light">Light</button>
+
+<script>
+    const darkBtn = document.getElementById("dark")
+    const lightBtn = document.getElementById("light")
+
+    document.addEventListener("DOMContentLoaded", () => {
+        if(localStorage.getItem("theme") === "dark"){
+            document.body.style.backgroundColor = "black"
+        }else {
+            document.body.style.backgroundColor = "white"
+        }
+    })
+
+    darkBtn.addEventListener("click",() => {
+        document.body.style.backgroundColor = "black"
+        localStorage.setItem("theme","dark")
+    })
+
+    lightBtn.addEventListener("click",() => {
+        document.body.style.backgroundColor = "white"
+        localStorage.setItem("theme","white")
+    })
+</script>
+<br>
+<br>
+13
+
+<input type="text" id="barang" placeholder="Masukkan barang">
+<button onclick="tambahBarang()">Tambah</button>
+
+<script>
+let list = JSON.parse(localStorage.getItem("list")) || []
+
+function tambahBarang(){
+    const barang = document.getElementById("barang").value
+    if(barang){
+        list.push(barang)
+        localStorage.setItem("list", JSON.stringify(list))
+        alert("Barang ditambahkan!")
+    }
+}
+</script>
+<br>
+14
+
+<ul id="daftar"></ul>
+
+<script>
+window.onload = function(){
+    const daftar = document.getElementById("daftar")
+    const list = JSON.parse(localStorage.getItem("list")) || []
+    daftar.innerHTML = ""
+    list.forEach(item => {
+        const li = document.createElement("li")
+        li.textContent = item
+        daftar.appendChild(li)
+    })
+}
+</script>
+<br>
+15
+
+<button onclick="clearAll()">Clear All</button>
+
+<script>
+function clearAll(){
+    localStorage.clear()
+    alert("Semua data dihapus!")
+}
+</script>
+
+
+
+
+
+</body>
+</html>
