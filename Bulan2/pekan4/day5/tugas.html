@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+    background-color: #121212;
+    color: #f1f1f1;
+    font-family: "Segoe UI", sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+
+.card {
+    background: #1e1e1e;
+    border-radius: 16px;
+    padding: 30px 20px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    text-align: center;
+}
+
+
+.card h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #00bcd4;
+}
+
+
+.card input[type="text"] {
+    padding: 10px;
+    width: 70%;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+
+.card button {
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.card button:first-of-type {
+    background-color: #4caf50;
+    color: white;
+}
+.card button:first-of-type:hover {
+    background-color: #45a049;
+}
+.card button:last-of-type {
+    background-color: #e53935;
+    color: white;
+}
+.card button:last-of-type:hover {
+    background-color: #c62828;
+}
+
+/* Daftar */
+.card ul {
+    padding: 0;
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+.card li {
+    background: #1f1f1f;
+    margin: 12px 0;
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    transition: transform 0.2s, background 0.3s;
+}
+
+.card li:hover {
+    background: #2a2a2a;
+    transform: translateY(-3px);
+}
+
+
+.card li input[type="checkbox"] {
+    margin-right: 15px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.card li span {
+    flex: 1;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+
+
+.card li input[type="checkbox"]:checked + span {
+    text-decoration: line-through;
+    color: #888;
+}
+
+    </style>
+</head>
+<body>
+ <div class = "card">
+    <h2>To-Do List</h2>
+    <input type="text" id = "todoInput" placeholder="Tambah tugas baru">
+    <button onclick="tambahTodo()">Tambah</button>
+    <button onclick="hapusSemuaTodo()">Hapus semua</button>
+    <ul id="todoList"></ul>
+</div>
+
+    
+
+    <script>
+        window.onload = function() {
+            const todos = JSON.parse(localStorage.getItem("todos")) || []
+            todos.forEach((item) => tampilkanTodo(item));
+        }
+
+
+        function tambahTodo(){
+            const input = document.getElementById("todoInput")
+            const value = input.value.trim()
+            if (value === "") return
+
+            tampilkanTodo(value)
+            simpanTodo(value)
+            input.value = ""
+        }
+
+        function tampilkanTodo(text){
+            const list = document.getElementById("todoList")
+            const item = document.createElement("li")
+
+            const checkbox = document.createElement("input")
+            checkbox.type = "checkbox"
+
+            const span = document.createElement("span")
+            span.textContent = text
+
+            const date = new Date()
+            const dateText = date.toLocaleDateString()
+            span.textContent += " " + dateText
+            span.onclick = function(){
+                list.removeChild(item)
+                hapusTodo(text)
+            }
+            item.appendChild(checkbox)
+            item.appendChild(span)
+            list.appendChild(item)
+        }
+
+        function simpanTodo(value){
+            const todos =JSON.parse(localStorage.getItem("todos")) || []
+            todos.push(value)
+            localStorage.setItem("todos", JSON.stringify(todos))
+        }
+
+        function hapusTodo(value){
+            const todos =JSON.parse(localStorage.getItem("todos")) || []
+            todos = todos.filter((item) => item !== value)
+            localStorage.setItem("todos", JSON.stringify(todos))
+        }
+
+        function hapusSemuaTodo(){
+            localStorage.removeItem("todos")
+            const list = document.getElementById("todoList")
+            list.innerHTML = ""
+        }
+    </script>
+</body>
+</html>
